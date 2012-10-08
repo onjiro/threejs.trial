@@ -4,6 +4,6 @@
   "main": "./index.html",
   "dependencies": {
     "threejs": "git://github.com/mrdoob/three.js.git",
-    "requirejs": "git://github.com/jrburke/requirejs#2.0.6"
+    "requirejs": "git://github.com/jrburke/requirejs#2.1.0"
   }
 }
