@@ -1,15 +1,15 @@
 requirejs.config({
     baseUrl: 'js',
     paths: {
-        lib: '../components'
+        three: '../components/threejs/build/three.min'
     },
     shim: {
-        'lib/threejs/build/three.min': {
+        'three': {
             exports:'THREE'
         }
     }
 });
-require(['lib/threejs/build/three.min'], function(THREE) {
+require(['three'], function(THREE) {
     init();
     animate();
 
