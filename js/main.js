@@ -1,4 +1,11 @@
-require(['../components/threejs/build/three.min'], function(th) {
+requirejs.config({
+    baseUrl: 'js',
+    paths: {
+        lib: '../components'
+    }
+});
+
+require(['lib/threejs/build/three.min'], function(th) {
     init();
     animate();
 
