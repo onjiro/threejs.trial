@@ -1,4 +1,5 @@
 define(function() {
+    var camera, scene, geometry, material, mesh, renderer;
     var trial = {
         init: function(THREE) {
             camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
