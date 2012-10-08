@@ -1,17 +1,20 @@
 define(function() {
-    var camera, scene, geometry, material, mesh, renderer;
-    var trial = {
+    var trial, camera, scene, geometry, material, mesh, renderer, createTileMesh;
+    trial = {
         init: function(THREE) {
             camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
             camera.position.z = 1000;
 
             scene = new THREE.Scene();
-
-            geometry = new THREE.CubeGeometry( 200, 200, 200 );
+            
+            geometry = new THREE.PlaneGeometry( 200, 200 );
             material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
-
-            mesh = new THREE.Mesh( geometry, material );
-            scene.add( mesh );
+            for (var i = 0; i < 9; i++) {
+                mesh = new THREE.Mesh( geometry, material );
+                mesh.position.x += 200 * Math.floor(i % 3) - 200;
+                mesh.position.y += 200 * Math.floor(i / 3) - 200;
+                scene.add( mesh );
+            }
 
             renderer = new THREE.CanvasRenderer();
             renderer.setSize( window.innerWidth, window.innerHeight );
