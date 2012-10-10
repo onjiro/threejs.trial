@@ -29,6 +29,9 @@ define(function() {
             mesh.rotation.y += 0.02;
 
             renderer.render( scene, camera );
+        },
+        cameraPosition: function(z) {
+            camera.position.z = z;
         }
     };
     return trial;
