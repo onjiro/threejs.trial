@@ -30,9 +30,13 @@ define(function() {
 
             renderer.render( scene, camera );
         },
-        cameraPosition: function(z) {
-            camera.position.z = z;
-        }
+        cameraPosition: function(r, theta, phi) {
+            // 一般的な直交座標系とは y と z 方向を入れ替える必要がある
+            camera.position.x = r * Math.sin(theta) * Math.cos(phi);
+            camera.position.z = r * Math.sin(theta) * Math.sin(phi)
+            camera.position.y = r * Math.cos(theta);
+            camera.lookAt(new THREE.Vector3(0, 0, 0));
+        },
     };
     return trial;
 });
