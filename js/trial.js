@@ -12,7 +12,8 @@ define(function() {
             for (var i = 0; i < 9; i++) {
                 mesh = new THREE.Mesh( geometry, material );
                 mesh.position.x += 200 * Math.floor(i % 3) - 200;
-                mesh.position.y += 200 * Math.floor(i / 3) - 200;
+                mesh.position.z += 200 * Math.floor(i / 3) - 200;
+                mesh.rotation.x = Math.PI / -2;
                 scene.add( mesh );
             }
 
@@ -29,7 +30,17 @@ define(function() {
             mesh.rotation.y += 0.02;
 
             renderer.render( scene, camera );
-        }
+        },
+        cameraPosition: function(r, theta, phi) {
+            // 一般的な直交座標系とは y と z 方向を入れ替える必要がある
+            // y を上方向として扱う
+            camera.position.set(
+                r * Math.sin(theta) * Math.cos(phi),
+                r * Math.cos(theta),
+                r * Math.sin(theta) * Math.sin(phi)
+            );
+            camera.lookAt(scene.position);
+        },
     };
     return trial;
 });
