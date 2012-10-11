@@ -12,7 +12,8 @@ define(function() {
             for (var i = 0; i < 9; i++) {
                 mesh = new THREE.Mesh( geometry, material );
                 mesh.position.x += 200 * Math.floor(i % 3) - 200;
-                mesh.position.y += 200 * Math.floor(i / 3) - 200;
+                mesh.position.z += 200 * Math.floor(i / 3) - 200;
+                mesh.rotation.x = Math.PI / -2;
                 scene.add( mesh );
             }
 
