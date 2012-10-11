@@ -3,6 +3,8 @@
 Workout with [three.js](git://github.com/mrdoob/three.js.git).
 I propose to create pictures like ["Disgaia Series"](http://disgaea.jp/index.html) with this repository.
 
+You can see how this works at [here](http://onjiro.github.com/threejs.trial/index.html).
+
 ## install
 
 Enter command listing below after cloned the repository.
