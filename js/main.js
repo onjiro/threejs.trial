@@ -1,7 +1,7 @@
 requirejs.config({
     baseUrl: 'js',
     paths: {
-        three: '../components/threejs/build/three.min'
+        three: 'three_r51'
     },
     shim: {
         'three': {
